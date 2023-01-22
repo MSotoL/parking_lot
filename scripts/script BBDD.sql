@@ -1,4 +1,16 @@
-/*            CREACIÓN DE LA BASE DE DATOS               */
+/*
+***********************************************************
+       SCRIPT SQL (MYSQL) PARA LA CREACIÓN DE LA
+       BASE DE DATOS Y TABLAS DE LA APLICACIÓN
+
+        Desarrollado por: MIGUEL SOTO LOMBRIS
+
+                    TFG - UNIR
+
+***********************************************************
+*/
+
+/* **********  CREACIÓN DE LA BASE DE DATOS  *********** */
 DROP DATABASE IF EXISTS PARKING_LOT_LAYOUT;
 CREATE DATABASE IF NOT EXISTS PARKING_LOT_LAYOUT;
 
