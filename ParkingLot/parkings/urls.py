@@ -1,23 +1,24 @@
 from django.urls import path
 
-from . import views
+from parkings.views import ParkingsListado,ParkingsDetalle,ParkingsCrear,ParkingsActualizar, ParkingsEliminar
+
 from django.conf import settings
 
 urlpatterns = [
-    path('', views.parkings, name="Parkings"),
-    
-    # La ruta 'leer' en donde listamos todos los registros o postres de la Base de Datos
-    path('', ParkingsListado.as_view(template_name = "index_parking.html"), name='listarparking'),
+    #path('', views.parkings, name="Parkings"),
+
+    # # La ruta 'ListarParking' en donde listamos todos los registros o Parkings de la Base de Datos
+    path('', ParkingsListado.as_view(template_name = "parkings/index_parking.html"), name='ListarParking'),    
  
-    # La ruta 'detalles' en donde mostraremos una página con los detalles de un postre o registro 
-    path('detalle/<int:pk>', ParkingsDetalle.as_view(template_name = "detalle_parking.html"), name='detalles'),
+    # # La ruta 'DetalleParking' en donde mostraremos una página con los detalles de un Parking o registro 
+    path('DetalleParking/<int:pk>', ParkingsDetalle.as_view(template_name = "parkings/detalle_parking.html"), name='DetalleParking'),
  
-    # La ruta 'crear' en donde mostraremos un formulario para crear un nuevo postre o registro  
-    path('crear', ParkingsCrear.as_view(template_name = "crear_parking.html"), name='crear'),
+    # # La ruta 'crear' en donde mostraremos un formulario para crear un nuevo Parking o registro  
+    path('CrearParking', ParkingsCrear.as_view(template_name = "parkings/crear_parking.html"), name='CrearParking'),
  
-    # La ruta 'actualizar' en donde mostraremos un formulario para actualizar un postre o registro de la Base de Datos 
-    path('editar/<int:pk>', ParkingsActualizar.as_view(template_name = "actualizar_parking.html"), name='actualizar'), 
+    # # La ruta 'actualizar' en donde mostraremos un formulario para actualizar un Parking o registro de la Base de Datos 
+    path('ActualizarParking/<int:pk>', ParkingsActualizar.as_view(template_name = "parkings/actualizar_parking.html"), name='ActualizarParking'), 
  
-    # La ruta 'eliminar' que usaremos para eliminar un postre o registro de la Base de Datos 
-    path('eliminar/<int:pk>', ParkingsEliminar.as_view(), name='eliminar'),     
+    # # La ruta 'eliminar' que usaremos para eliminar un Parking o registro de la Base de Datos 
+    path('ElminarParking/<int:pk>', ParkingsEliminar.as_view(), name='ElminarParking'),       
 ]

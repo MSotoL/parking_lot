@@ -16,9 +16,27 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls import include, path
+from parkings.views import ParkingsListado,ParkingsDetalle,ParkingsCrear,ParkingsActualizar, ParkingsEliminar
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('ParkingLotApp.urls')),
     path('contacto/', include('contacto.urls')),
+    path('parkings/', include('parkings.urls')),
+    path('edificios/', include('edificios.urls')),
+    
+    # # # La ruta 'ListarParking' en donde listamos todos los registros o Parkings de la Base de Datos
+    # path('parkings/', ParkingsListado.as_view(template_name = "parkings/index_parking.html"), name='ListarParking'),    
+ 
+    # # # La ruta 'DetalleParking' en donde mostraremos una página con los detalles de un Parking o registro 
+    # path('parkings/DetalleParking/<int:pk>', ParkingsDetalle.as_view(template_name = "parkings/detalle_parking.html"), name='DetalleParking'),
+ 
+    # # # La ruta 'crear' en donde mostraremos un formulario para crear un nuevo Parking o registro  
+    # path('parkings/CrearParking', ParkingsCrear.as_view(template_name = "parkings/crear_parking.html"), name='CrearParking'),
+ 
+    # # # La ruta 'actualizar' en donde mostraremos un formulario para actualizar un Parking o registro de la Base de Datos 
+    # path('parkings/ActualizarParking/<int:pk>', ParkingsActualizar.as_view(template_name = "parkings/actualizar_parking.html"), name='ActualizarParking'), 
+ 
+    # # # La ruta 'eliminar' que usaremos para eliminar un Parking o registro de la Base de Datos 
+    # path('parkings/ElminarParking/<int:pk>', ParkingsEliminar.as_view(), name='ElminarParking'),    
 ]

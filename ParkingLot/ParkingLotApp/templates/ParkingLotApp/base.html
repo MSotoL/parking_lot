@@ -1,6 +1,6 @@
 <html>
   <head>
-      
+    
     {% load static %}
 
     <!-- Bootstrap -->
@@ -12,6 +12,7 @@
     
     <!-- Styles -->
     <link href="{% static 'ParkingLotApp/css/gestion.css' %}" rel="stylesheet">
+
   </head>
 
   <body>
@@ -33,10 +34,10 @@
                 <a class="nav-link text-uppercase text-expanded" href="{% url 'Home' %}">Inicio</a>
               </li>
               <li class="nav-item {% if request.path == '/parkings/' %}active{% endif %} px-lg-4">
-                <a class="nav-link text-uppercase text-expanded" href="#">Parkings</a>
+                <a class="nav-link text-uppercase text-expanded" href="{% url 'ListarParking' %}">Parkings</a>
               </li>
               <li class="nav-item {% if request.path == '/edificios/' %}active{% endif %} px-lg-4">
-                <a class="nav-link text-uppercase text-expanded" href="#">Edificios</a>
+                <a class="nav-link text-uppercase text-expanded" href="{% url 'ListarEdificio' %}">Edificios</a>
               </li>
               <li class="nav-item {% if request.path == '/plantas/' %}active{% endif %} px-lg-4">
                 <a class="nav-link text-uppercase text-expanded" href="#">Plantas</a>
@@ -46,7 +47,7 @@
               </li>
               <li class="nav-item {% if request.path == '/plazas/' %}active{% endif %} px-lg-4">
                 <a class="nav-link text-uppercase text-expanded" href="#">Plazas</a>
-              </li>              
+              </li>
  
               <li class="nav-item {% if request.path == '/contacto/' %}active{% endif %} px-lg-4">
                 <a class="nav-link text-uppercase text-expanded" href="{% url 'Contacto' %}">Contacto</a>
