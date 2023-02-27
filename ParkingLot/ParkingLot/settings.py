@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'parkings',
     'edificios',
     'plantas',
+    'zonas',
 ]
 
 MIDDLEWARE = [
