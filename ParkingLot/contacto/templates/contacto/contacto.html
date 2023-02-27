@@ -1,0 +1,22 @@
+{% extends "ParkingLotApp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+    <div class="contenedorFormulario">
+
+        {% if "valido" in request.GET %}
+            <p style="color:snow">Información enviada correctamente. Gracias.</p>
+        {% elif "no_valido" in request.GET %}
+            <p style="color:snow">NO se ha podido enviar la información. Inténtelo de nuevo.</p>
+        {% endif %}
+
+        <form action="" method="POST" style="text-align: center;">
+            {% csrf_token %}
+            <table style="color:white; margin:20px auto;">{{formulario.as_table}}</table>
+            <input type="submit" value="Enviar" style="width:150px;">
+        </form>
+    </div>
+
+{% endblock %}
