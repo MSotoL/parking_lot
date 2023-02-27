@@ -46,7 +46,7 @@
                 <a class="nav-link text-uppercase text-expanded" href="{% url 'ListarZona' %}">Zonas</a>
               </li>
               <li class="nav-item {% if request.path == '/plazas/' %}active{% endif %} px-lg-4">
-                <a class="nav-link text-uppercase text-expanded" href="#">Plazas</a>
+                <a class="nav-link text-uppercase text-expanded" href="{% url 'ListarPlaza' %}">Plazas</a>
               </li>
  
               <li class="nav-item {% if request.path == '/contacto/' %}active{% endif %} px-lg-4">

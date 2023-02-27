@@ -1,0 +1,25 @@
+{% extends "ParkingLotApp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+<div class="row">
+  <div class="col-lg-1">&nbsp;</div>
+  <div class="col-lg-10 text-center text-uppercase"><h3 class="alert alert-danger text-center" style="background-color: rgba(255,255,255, 0.7); margin-top:10px;">Plazas</h3></div>
+  <div class="col-lg-1">&nbsp;</div>
+</div>
+<div class="contenedorFormulario">
+  <form action="" method="post" enctype="multipart/form-data" style="width:60%; margin:auto; color:white;">
+        
+      {% csrf_token %}
+
+    <table style="color:white; margin:20px auto;">{{form.as_table}}</table>
+    <div class="text-center">
+      <button type="submit" class="btn btn-sm btn-success">Aceptar</button>
+      <a href="./" type="submit" class="btn btn-sm btn-success">Cancelar</a>
+    </div>
+    
+  </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "ParkingLotApp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-1">&nbsp;</div>
+    <div class="col-lg-10 text-center text-uppercase"><h3 class="alert alert-danger text-center" style="background-color: rgba(255,255,255, 0.7); margin-top:10px;">Plazas</h3></div>
+    <div class="col-lg-1">&nbsp;</div>
+  </div>
+<div class="row">
+    <div class="contenedorFormulario">
+        <h4 style="color:white;" class="text-center text-uppercase">Detalles de la Zona</h4>
+        <p><span class="txt_negrita" style="color:lightgreen;">Planta:</span>&nbsp;<span style="color:white;">{{object.id_planta}}</span></p>
+        <p><span class="txt_negrita" style="color:lightgreen;">Descripción Zona:</span>&nbsp;<span style="color:white;">{{object.descripcion}}</span></p>
+        <p><span class="txt_negrita" style="color:lightgreen;">Observaciones Zona:</span>&nbsp;<span style="color:white;">{{object.observaciones}}</span></p>        
+        <p><span class="txt_negrita" style="color:lightgreen;">Creado:</span>&nbsp;<span style="color:white;">{{object.created}}</span></p>
+        <p><span class="txt_negrita" style="color:lightgreen;">Actualizado:</span>&nbsp;<span style="color:white;">{{object.updated}}</span></p>
+        
+        <!-- Botón para volver a la vista principal (Home) -->
+        <div class="text-center">
+        <a href="../" type="submit" class="btn btn-sm btn-success">Volver</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
