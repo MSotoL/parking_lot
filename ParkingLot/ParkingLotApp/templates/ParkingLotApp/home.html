@@ -1,0 +1,44 @@
+{% extends "ParkingLotApp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+<!-- Heading -->
+<section class="page-section clearfix">
+  <div class="container">
+    <div class="intro">
+      <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'ParkingLotApp/img/fondo.jpg' %}" alt="">
+      <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+        <h2 class="section-heading mb-4" >
+          <span class="section-heading-upper">Gestión de Parkings</span>
+          <span class="section-heading-lower">Fiabilidad</span>
+        </h2>
+        <p class="mb-3">
+          El sistema ha sido concebido para que pueda gestionar la información de sus negocios de parking. 
+          Podrá dar de alta la información de diferentes parkings, así como si están compuestos de uno o más edificios.
+          Los edificios podrán dividirser en plantas, estás a su vez puedes disponer de zonas de aparcamiento y finalmente las plazas.
+        </p>
+      
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Message -->
+<!-- <section class="page-section cta">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-9 mx-auto">
+        <div class="cta-inner text-center rounded">
+          <h2 class="section-heading mb-4">
+            <span class="section-heading-upper">Compromiso total</span>
+            <span class="section-heading-lower">Garantizado</span>
+          </h2>
+          <p class="mb-0">Con más de 75 años de experiencia a nuestras espaldas, desde Gestión de Pedidos tenemos los conocimientos y herramientas necesarios para llevar cualquier objeto a la puerta de su casa con puntualidad y profesionalidad.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+{% endblock %}
