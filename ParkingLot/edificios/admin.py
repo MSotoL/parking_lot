@@ -3,7 +3,7 @@ from .models import Edificio
 
 # Register your models here.
 class EdificioAdmin(admin.ModelAdmin):
-    fields=("descripcion", "observaciones","id_created", "updated")
+    fields=("id_parking", "descripcion", "observaciones","created", "updated")
     readonly_fields=("created", "updated")
 
 admin.site.register(Edificio, EdificioAdmin)

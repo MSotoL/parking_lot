@@ -5,17 +5,19 @@
 {% block content %}
 <div class="row">
     <div class="col-lg-1">&nbsp;</div>
-    <div class="col-lg-10 text-center text-uppercase"><h3 style="color:white">Edificios</h3></div>
+    <div class="col-lg-10 text-center text-uppercase"><h3 style="color:white">Plantas</h3></div>
     <div class="col-lg-1">&nbsp;</div>
   </div>
 <div class="row">
     <div class="contenedorFormulario">
-        <h4 style="color:white;" class="text-center text-uppercase">Detalles del Edificio</h4>
-        <p><span class="txt_negrita" style="color:lightgreen;">Parking:</span>&nbsp;<span style="color:white;">{{object.id_parking}}</span></p>
+        <h4 style="color:white;" class="text-center text-uppercase">Detalles de la Planta</h4>
+        <p><span class="txt_negrita" style="color:lightgreen;">Edificio:</span>&nbsp;<span style="color:white;">{{object.id_edificio}}</span></p>
         <p><span class="txt_negrita" style="color:lightgreen;">Descripción:</span>&nbsp;<span style="color:white;">{{object.descripcion}}</span></p>
+        <p><span class="txt_negrita" style="color:lightgreen;">Nº Máximo de Plantas:</span>&nbsp;<span style="color:white;">{{object.max_plazas}}</span></p>
         <p><span class="txt_negrita" style="color:lightgreen;">Observaciones:</span>&nbsp;<span style="color:white;">{{object.observaciones}}</span></p>        
         <p><span class="txt_negrita" style="color:lightgreen;">Creado:</span>&nbsp;<span style="color:white;">{{object.created}}</span></p>
         <p><span class="txt_negrita" style="color:lightgreen;">Actualizado:</span>&nbsp;<span style="color:white;">{{object.updated}}</span></p>
+        
         <!-- Botón para volver a la vista principal (Home) -->
         <div class="text-center">
         <a href="../" type="submit" class="btn btn-sm btn-success">Volver</a>
