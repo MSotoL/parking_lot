@@ -622,11 +622,6 @@ function cerrarAyuda(){
 // ####################################################
 // #####  CREO EL MENÚ CONTEXTUAL DE CADA FORMA  ######
 // ####################################################
-
-function cerrarFormulario(){
-  document.getElementById('frmPlaza').style.visibility='hidden';
-}
-
 let currentShape;
 var menuNode = document.getElementById('menu');
 document.getElementById('btnInformacion').addEventListener('click', () => {
@@ -673,8 +668,13 @@ stage.on('contextmenu', function (e) {
   menuNode.style.display = 'initial';
   var containerRect = stage.container().getBoundingClientRect();
   menuNode.style.top =
-    containerRect.top + stage.getPointerPosition().y + 4 + 'px';
+    containerRect.top + stage.getPointerPosition().y + 'px';
+    // containerRect.top + stage.getPointerPosition().y + 4 + 'px';
   menuNode.style.left =
-    containerRect.left + stage.getPointerPosition().x + 4 + 'px';
+    containerRect.left + stage.getPointerPosition().x + 'px';
+    // containerRect.left + stage.getPointerPosition().x + 4 + 'px';
 });
 
+function cerrarFormulario(){
+  document.getElementById('frmPlaza').style.visibility='hidden';
+}

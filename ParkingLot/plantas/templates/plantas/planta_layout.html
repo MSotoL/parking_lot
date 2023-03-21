@@ -37,12 +37,15 @@
     </table>
 </div> 
 <div id="ayuda">
-    <p><strong>Ayuda</strong></p>
-    <ul>
-        <li>Pulse en la barra de herramientas que quiere incluir en el plano. Arrastre la figura que ha incluído en el diseño del Parking para colocarla en la ubicación deseada.</li>
-        <li>Si quiere eliminar alguna figura del diseño pulse con el botón derecho del ratón sobre la figura a borrar.</li>
-        <li>El botón "Guardar Imagen" genera una imagen del plano diseñado en el estado en que se encuentre en el momento de pulsarlo.</li>
-    </ul>
+    <p class="h4 text-center text-dark"><strong>Ayuda</strong></p>
+    <p>
+        <ul>
+            <li>Haga click sobre la figura de la barra de herramientas que quiere incluir en el plano, seguidamente arrastre la figura que ha incluído en el diseño del Parking para colocarla en la ubicación deseada.</li>
+            <li>Si quiere eliminar alguna figura del diseño pulse con el botón derecho del ratón sobre la figura a borrar.</li>
+            <li>Si quiere añadir información sobre alguna de las plazas que haya incluído en el plano, pulse con el botón derecho del ratón sobre la plaza y pulse sobre la opción <span class="font-italic">'Añadir información de la Plaza'</span>.</li>
+            <li>El botón <span class="font-italic">'Guardar Imagen'</span> genera una imagen del plano diseñado en el estado en que se encuentre en el momento de pulsarlo.</li>
+        </ul>
+    </p>
     <button type="button" id="btnCerrarAyuda" onclick="cerrarAyuda();"><img src="{% static 'ParkingLotApp/img/volver.png' %}"></button>
 </div>  
 <div id="lienzo"></div>
