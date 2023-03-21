@@ -37,8 +37,6 @@ class PlantaCrear(SuccessMessageMixin, CreateView):
 class PlantaDetalle(DetailView): 
     model = Planta # Llamamos a la clase 'Planta' que se encuentra en nuestro archivo 'models.py' 
     
-
-
 class PlantaActualizar(SuccessMessageMixin, UpdateView): 
     model = Planta # Llamamos a la clase 'Planta' que se encuentra en nuestro archivo 'models.py' 
     form = Planta # Definimos nuestro formulario con el nombre de la clase o modelo 'Planta' 
@@ -48,8 +46,6 @@ class PlantaActualizar(SuccessMessageMixin, UpdateView):
     # Redireccionamos a la página principal 
     def get_success_url(self):               
         return reverse('ListarPlanta') # Redireccionamos a la vista principal 
-
-
 
 class PlantaEliminar(SuccessMessageMixin, DeleteView): 
     model = Planta
@@ -61,3 +57,9 @@ class PlantaEliminar(SuccessMessageMixin, DeleteView):
         success_message = 'Planta Eliminada Correctamente' # Mostramos este Mensaje si el Parking se ha eliminado correctamente
         messages.success (self.request, (success_message))       
         return reverse('ListarPlanta') # Redireccionamos a la vista principal 
+    
+class PlantaDibujar(DetailView):
+    model = Planta
+    
+    def get_success_url(self): 
+        return reverse('DibujarPlanta') # Redireccionamos a la vista principal 

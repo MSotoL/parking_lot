@@ -2,7 +2,7 @@ from django.db import models
 from zonas.models import Zona
 from ParkingLotApp.models import TipoPlaza
 
-# Creo los modelos para el Parking
+# Creo los modelos para las Plazas
 # Los datos de las Plantas podrán ser modificadas por el usuario
 
 # Create your models here.

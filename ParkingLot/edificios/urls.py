@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .views import EdificioListado, EdificioDetalle, EdificioCrear, EdificioActualizar, EdificioEliminar
+from .views import EdificioListado, EdificioDetalle, EdificioCrear, EdificioActualizar, EdificioEliminar, EdificioListadoFiltrado
 
 from django.conf import settings
 
@@ -21,5 +21,8 @@ urlpatterns = [
  
     # # La ruta 'eliminar' que usaremos para eliminar un Parking o registro de la Base de Datos 
     path('ElminarEdificio/<int:pk>', EdificioEliminar.as_view(), name='ElminarEdificio'),
+    
+    # # La ruta 'ListarParking' en donde listamos todos los registros o Parkings de la Base de Datos
+    path('ListarEdificioFiltrado/<int:pk>', EdificioListadoFiltrado.as_view(template_name = "edificios/index_edificio.html"), name='ListarEdificioFiltrado'),
           
 ]

@@ -1,7 +1,7 @@
 from django.db import models
 from parkings.models import Parking
 
-# Creo los modelos para el Parking
+# Creo los modelos para los Edicficios del Parking
 # Los datos de los Edificios podrán ser modificados por el usuario
 
 class Edificio(models.Model):

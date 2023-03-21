@@ -37,8 +37,6 @@ class ParkingsCrear(SuccessMessageMixin, CreateView):
 class ParkingsDetalle(DetailView): 
     model = Parking # Llamamos a la clase 'Parking' que se encuentra en nuestro archivo 'models.py' 
     
-
-
 class ParkingsActualizar(SuccessMessageMixin, UpdateView): 
     model = Parking # Llamamos a la clase 'Parking' que se encuentra en nuestro archivo 'models.py' 
     form = Parking # Definimos nuestro formulario con el nombre de la clase o modelo 'Parking' 
@@ -48,8 +46,6 @@ class ParkingsActualizar(SuccessMessageMixin, UpdateView):
     # Redireccionamos a la página principal 
     def get_success_url(self):               
         return reverse('ListarParking') # Redireccionamos a la vista principal 
-
-
 
 class ParkingsEliminar(SuccessMessageMixin, DeleteView): 
     model = Parking

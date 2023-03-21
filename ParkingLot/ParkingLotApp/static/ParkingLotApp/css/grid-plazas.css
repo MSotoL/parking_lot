@@ -1,0 +1,282 @@
+#body-layout {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #F5F5F5;
+    background-size: cover;
+}
+
+#toolbar {
+    position:relative;
+    background-color: black; 
+    width: 900px; 
+    height: 165px; 
+    margin: 0 auto;
+}
+
+#ayuda  {
+    background-color: rgb(253, 255, 160);     
+    width: 400px; 
+    height: 350px; 
+    margin: 0 auto;    
+    top:0;
+    position:absolute;
+    top:250px;
+    left:600px;
+    z-index: 1;
+    padding: 0 15px;
+    visibility: hidden;
+    box-shadow: 5px 5px 10px darkslategray;
+    border-radius: 10px;
+}
+
+#lienzo  {
+    background-color: darkgrey; 
+    width: 900px; 
+    height: 500px; 
+    margin: 0 auto;
+}
+
+#tabLayout {
+    border: 1px solid white;
+    border-spacing: 0;
+    margin: auto auto;
+    width: 100%;
+    text-align: center;
+}
+
+#trLayout {
+    border: 1px solid white;
+}
+
+#thLayout {
+    border: 1px solid white;
+}
+
+#tdLayout {
+    width:60px;
+    height: 60px;
+    text-align: center;
+    border: 1px solid white;
+}
+
+.plzGrande{
+    background-color: rgb(147, 216, 147);
+    color:black;
+}
+
+.plzPeque{
+    background-color: rgb(180, 254, 180);;
+    color:black;
+}
+
+.plzDisc{
+    background-color: rgb(164, 164, 250);;
+    color:black;
+}
+
+.figColum{
+    background-color: rgb(253, 154, 159);;
+    color:black;
+}
+
+.figCarret{
+    background-color: rgb(222, 222, 222);;
+    color:black;
+}
+
+#btnPlzGrande_H {
+    width: 50px;
+    height: 20px;
+    background-color: rgb(58, 184, 46);
+    border: 3px solid white;
+    color:grey
+}
+
+#btnPlzGrande_H:hover {
+    background-color: green;
+    border: 3px solid white;
+    color:black;
+    cursor: pointer;
+}
+
+#btnPlzGrande_V {
+    width: 20px;
+    height: 50px;
+    background-color: rgb(58, 184, 46);
+    border: 3px solid white;
+    color:grey
+}
+
+#btnPlzGrande_V:hover {
+    background-color: green;
+    border: 3px solid white;
+    color:black;
+    cursor: pointer;
+}
+
+#btnPlzPeq_H {
+    width: 50px;
+    height: 20px;
+    background-color: rgb(90, 218, 90);
+    border: 3px solid white;
+    color:grey;
+}
+
+#btnPlzPeq_H:hover {
+    background-color: rgb(0, 224, 0);
+    border: 3px solid white;
+    color:black;
+    cursor: pointer;
+}
+
+#btnPlzPeq_V {
+    width: 20px;
+    height: 50px;
+    background-color: rgb(90, 218, 90);
+    border: 3px solid white;
+    color:grey;
+}
+
+#btnPlzPeq_V:hover {
+    background-color:rgb(0, 224, 0);
+    border: 3px solid white;
+    color:black;
+    cursor: pointer;
+}
+
+#btnPlzDiscap_H {
+    width: 50px;
+    height: 20px;
+    background-color: rgb(111, 111, 254);
+    border: 3px solid white;
+    color:grey;
+}
+
+#btnPlzDiscap_H:hover {
+    background-color: blue;
+    border: 3px solid white;
+    color:black;
+    cursor: pointer;
+}
+
+#btnPlzDiscap_V {
+    width: 20px;
+    height: 50px;
+    background-color: rgb(111, 111, 254);
+    border: 3px solid white;
+    color:grey;
+}
+
+#btnPlzDiscap_V:hover {
+    background-color: blue;
+    border: 3px solid white;
+    color:black;
+    cursor: pointer;
+}
+
+#btnColumna {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: red;
+    border: 3px solid white;
+    color:grey;
+}
+
+#btnColumna:hover {
+    background-color: orange;
+    border: 3px solid white;
+    color:black;
+    cursor: pointer;    
+}
+
+#btnCarretera_H {
+    width: 60px;
+    height: 25px;
+    background-color: rgb(210, 210, 210);
+    border: 3px solid white;
+    color:grey;
+}
+
+#btnCarretera_H:hover {
+    background-color: rgb(172, 172, 172);
+    border: 3px solid white;
+    color:black;
+    cursor: pointer;    
+}
+
+#btnCarretera_V {
+    width: 25px;
+    height: 60px;
+    background-color: rgb(210, 210, 210);
+    border: 3px solid white;
+    color:grey;
+}
+
+#btnCarretera_V:hover {
+    background-color: rgb(172, 172, 172);
+    border: 3px solid white;
+    color:black;
+    cursor: pointer;    
+}
+
+#btnBorrar, #btnGuardar, #btnAyuda {    
+    border:0;
+    background-color: black;    
+    cursor:pointer;    
+}
+
+#btnCerrarAyuda {  
+    float: right;  
+    background-color: rgb(168, 253, 189);
+    border:1px solid darkgreen;
+    cursor:pointer; 
+    margin: 0 auto;   
+    border-radius: 15px;    
+}
+
+#btnCerrarAyuda:hover { 
+    background-color: rgb(103, 238, 115);
+    border:1px solid darkgreen;    
+    cursor:pointer; 
+}
+
+#btnBorrar img, #btnGuardar img, #btnAyuda img, #btnCerrarAyuda img {  
+    width:30px;
+}
+
+#menu {
+    display: none;
+    position: absolute;
+    width: 250px;
+    background-color: lightgoldenrodyellow;
+    box-shadow: 0 0 5px darkblue;
+    border-radius: 3px;
+  }
+
+  #menu button {
+    width: 100%;
+    background-color: lightgoldenrodyellow;
+    border: none;
+    margin: 0;
+    padding: 10px;
+  }
+
+  #menu button:hover {
+    background-color: orange;
+  }
+
+  #frmPlaza {
+    visibility: hidden;
+    background-color: lightgreen;
+    color:darkblue;
+    position: absolute;
+    top: 300px;
+    left: 850px;
+    width: 400;
+    height: 600;
+    padding:20px;
+    box-shadow: 0 0 5px darkblue;
+    border-radius: 5px;
+  }

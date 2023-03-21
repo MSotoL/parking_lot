@@ -23,6 +23,17 @@ from django import forms
 class EdificioListado(ListView): 
     model = Edificio # Llamo a la clase 'Edificio' que se encuentra en el archivo 'models.py'
 
+class EdificioListadoFiltrado(ListView): 
+    model = Edificio # Llamo a la clase 'Edificio' que se encuentra en el archivo 'models.py'
+
+    def get_queryset(self):
+        parking = self.kwargs.get('pk')
+        if parking:
+            queryset = Edificio.objects.filter(id_parking=parking)
+        else:
+            queryset = super().get_queryset()
+        return queryset
+
 class EdificioCrear(SuccessMessageMixin, CreateView): 
     model = Edificio # Llamamos a la clase 'Edificio' que se encuentra en nuestro archivo 'models.py'
     form = Edificio # Definimos nuestro formulario con el nombre de la clase o modelo 'Edificio'
@@ -33,6 +44,18 @@ class EdificioCrear(SuccessMessageMixin, CreateView):
     # Redireccionamos a la página principal 
     def get_success_url(self):        
         return reverse('ListarEdificio') # Redireccionamos a la vista principal 'ListarParking'
+    
+class EdificioFiltradoCrear(SuccessMessageMixin, CreateView): 
+    model = Edificio # Llamamos a la clase 'Edificio' que se encuentra en nuestro archivo 'models.py'
+    form = Edificio # Definimos nuestro formulario con el nombre de la clase o modelo 'Edificio'
+    fields = ("descripcion", "observaciones", "id_parking") # Le decimos a Django que muestre los campos de la tabla 'Edificio' de nuestra Base de Datos 
+    
+    success_message = 'Edificio Creado Correctamente' # Mostramos este Mensaje si el Parking se crea correctamente
+ 
+    # Redireccionamos a la página principal 
+    def get_success_url(self):        
+        return reverse('ListarEdificio') # Redireccionamos a la vista principal 'ListarParking'
+        
     
 class EdificioDetalle(DetailView): 
     model = Edificio # Llamamos a la clase 'Edificio' que se encuentra en nuestro archivo 'models.py' 

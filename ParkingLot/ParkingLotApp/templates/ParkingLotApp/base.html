@@ -12,12 +12,13 @@
     
     <!-- Styles -->
     <link href="{% static 'ParkingLotApp/css/gestion.css' %}" rel="stylesheet">
-
+    <link href="{% static 'ParkingLotApp/css/grid-plazas.css' %}" rel="stylesheet">
   </head>
 
   <body>
 
-    <h1 class="site-heading text-center text-white d-none d-lg-block">       
+    <!--<h1 class="site-heading text-center text-white d-none d-lg-block">       -->
+    <h1 class="display-3 text-center text-white d-none d-lg-block">       
       <span class="site-heading-lower">Gestión de Parkings</span>
     </h1>
 
@@ -42,9 +43,9 @@
               <li class="nav-item {% if request.path == '/plantas/' %}active{% endif %} px-lg-4">
                 <a class="nav-link text-uppercase text-expanded" href="{% url 'ListarPlanta' %}">Plantas</a>
               </li>
-              <li class="nav-item {% if request.path == '/zonas/' %}active{% endif %} px-lg-4">
+              <!-- <li class="nav-item {% if request.path == '/zonas/' %}active{% endif %} px-lg-4">
                 <a class="nav-link text-uppercase text-expanded" href="{% url 'ListarZona' %}">Zonas</a>
-              </li>
+              </li> -->
               <li class="nav-item {% if request.path == '/plazas/' %}active{% endif %} px-lg-4">
                 <a class="nav-link text-uppercase text-expanded" href="{% url 'ListarPlaza' %}">Plazas</a>
               </li>
@@ -89,9 +90,9 @@
           </a>
         </p>
         <p class="m-0 mbt">
-          <a href="sample.html" class="link">Política de privacidad</a> ·
-          <a href="sample.html" class="link">Aviso legal</a> ·
-          <a href="sample.html" class="link">Cookies</a>
+          <a href="#" class="link">Política de privacidad</a> ·
+          <a href="#" class="link">Aviso legal</a> ·
+          <a href="#" class="link">Cookies</a>
         </p>
         <p class="m-0 mbt1">&copy; Gestión de Parkings - 2023 - Miguel Soto Lombris</p>
       </div>

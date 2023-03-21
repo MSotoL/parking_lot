@@ -1,0 +1,72 @@
+{% extends "ParkingLotApp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<script src="https://unpkg.com/konva@8.4.2/konva.min.js"></script>
+<div id="toolbar">
+    <table id="tabLayout" style="color: white;">
+        <tr id="trLayout">
+            <th colspan="12" id="thLayout">                    
+                <h3>Barra de herramientas</h3>
+            </th>
+        </tr>
+        <tr id="trLayout">
+            <th colspan="2" class="plzGrande" id="thLayout">Plaza Grande</th>
+            <th colspan="2" class="plzPeque" id="thLayout">Plaza Pequeña</th>
+            <th colspan="2" class="plzDisc" id="thLayout">Plaza Discapacitado</th>
+            <th class="figColum" id="thLayout">Columna</th>
+            <th colspan="2" class="figCarret" id="thLayout">Carretera</th>
+            <th colspan="3" id="thLayout">Opciones</th>
+        </tr>
+        <tr id="trLayout">
+            <td class="plzGrande" id="tdLayout"><button type="button" id="btnPlzGrande_H" onclick="nPlazaGr_H();">&nbsp;</button></td>
+            <td class="plzGrande" id="tdLayout"><button type="button" id="btnPlzGrande_V" onclick="nPlazaGr_V();">&nbsp;</button></td>
+            <td class="plzPeque" id="tdLayout"><button type="button" id="btnPlzPeq_H" onclick="nPlazaPq_H();">&nbsp;</button></td>
+            <td class="plzPeque" id="tdLayout"><button type="button" id="btnPlzPeq_V" onclick="nPlazaPq_V();">&nbsp;</button></td>
+            <td class="plzDisc" id="tdLayout"><button type="button" id="btnPlzDiscap_H" onclick="nPlazaDc_H();">&nbsp;</button></td>
+            <td class="plzDisc" id="tdLayout"><button type="button" id="btnPlzDiscap_V" onclick="nPlazaDc_V();">&nbsp;</button></td>
+            <td class="figColum" id="tdLayout"><button type="button" id="btnColumna" onclick="nColumna();">&nbsp;</button></td>
+            <td class="figCarret" id="tdLayout"><button type="button" id="btnCarretera_H" onclick="nCarr_H();">&nbsp;</button></td>
+            <td class="figCarret" id="tdLayout"><button type="button" id="btnCarretera_V" onclick="nCarr_V();">&nbsp;</button></td>
+            <td id="tdLayout"><button type="button" id="btnGuardar" onclick="guardar();"><img src="{% static 'ParkingLotApp/img/guardar.png' %}"></button>Guardar Imagen</td>
+            <td id="tdLayout"><button type="button" id="btnAyuda" onclick="ayuda();"><img src="{% static 'ParkingLotApp/img/ayuda.png' %}"></button>Ayuda</td>
+            <td id="tdLayout"><button type="button" id="btnBorrar" onclick="borrar();"><img src="{% static 'ParkingLotApp/img/reset.png' %}"></button>Reiniciar</td>
+        </tr>
+    </table>
+</div> 
+<div id="ayuda">
+    <p><strong>Ayuda</strong></p>
+    <ul>
+        <li>Pulse en la barra de herramientas que quiere incluir en el plano. Arrastre la figura que ha incluído en el diseño del Parking para colocarla en la ubicación deseada.</li>
+        <li>Si quiere eliminar alguna figura del diseño pulse con el botón derecho del ratón sobre la figura a borrar.</li>
+        <li>El botón "Guardar Imagen" genera una imagen del plano diseñado en el estado en que se encuentre en el momento de pulsarlo.</li>
+    </ul>
+    <button type="button" id="btnCerrarAyuda" onclick="cerrarAyuda();"><img src="{% static 'ParkingLotApp/img/volver.png' %}"></button>
+</div>  
+<div id="lienzo"></div>
+<div id="menu">
+    <div>
+      <button id="btnInformacion">Añadir información de la Plaza</button>
+      <!-- <button id="delete-button">Delete</button> -->
+      <button id="btnBorrarFig">Borrar figura</button>
+    </div>
+  </div>    
+<div id="frmPlaza">
+    <h2>Datos de la Plaza</h2>
+    <form>
+        <label for="plzDescrip">Descripción:</label><br>
+        <input type="text" name="plzDescrip" id="plzDescrip"><br><br>
+        <label for="plzObserv">Observaciones:</label><br>
+        <textarea name="plzObserb" id="plzObserb" rows="10" cols="30"></textarea> <br><br>
+        <label for="plzTipo">Tipo de Plaza:</label><br>
+        <input type="text" name="plzTipoPlaza" id="plzTipoPlaza"><br><br><br>
+        <input type="button" name="btnGuardarInfo" id="btnGuardarInfo" onclick="alert('Hello World!')" value="Guardar Información">&nbsp;
+        <input type="reset" name="btnReset" id="btnReset" value="Borrar campos">&nbsp;
+        <button type="button" id="btnCerrarAyuda" onclick="cerrarFormulario();"><img src="{% static 'ParkingLotApp/img/volver.png' %}"></button>
+    </form>
+</div>
+<script src="{% static 'ParkingLotApp/js/grid-plazas.js' %}"></script>    
+
+{% endblock %}

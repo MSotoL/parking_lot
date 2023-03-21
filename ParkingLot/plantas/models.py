@@ -1,7 +1,7 @@
 from django.db import models
 from edificios.models import Edificio
 
-# Creo los modelos para el Parking
+# Creo los modelos para las Plantas
 # Los datos de las Plantas podrán ser modificadas por el usuario
 
 # Create your models here.
