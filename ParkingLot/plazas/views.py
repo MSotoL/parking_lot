@@ -6,7 +6,8 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 # Instancio los modelos de la BBDD
 from .models import Plaza
-from zonas.models import Zona
+#from zonas.models import Zona
+from plantas.models import Planta
 from ParkingLotApp.models import TipoPlaza
 
 # Sirve para redireccionar despues de una acción revertiendo patrones de expresiones regulares 
@@ -27,7 +28,8 @@ class PlazaListado(ListView):
 class PlazaCrear(SuccessMessageMixin, CreateView): 
     model = Plaza # Llamamos a la clase 'Plaza' que se encuentra en nuestro archivo 'models.py'
     form = Plaza # Definimos nuestro formulario con el nombre de la clase o modelo 'Plaza'
-    fields = ("descripcion", "observaciones", "id_zona", "id_tipo_plaza") # Le decimos a Django que muestre los campos de la tabla 'Plaza' de nuestra Base de Datos 
+    # fields = ("descripcion", "observaciones", "id_zona", "id_tipo_plaza") # Le decimos a Django que muestre los campos de la tabla 'Plaza' de nuestra Base de Datos 
+    fields = ("descripcion", "observaciones", "id_planta", "id_tipo_plaza") # Le decimos a Django que muestre los campos de la tabla 'Plaza' de nuestra Base de Datos 
     
     success_message = 'Plaza Creada Correctamente' # Mostramos este Mensaje si el Parking se crea correctamente
  
