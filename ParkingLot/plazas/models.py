@@ -1,5 +1,6 @@
 from django.db import models
-from zonas.models import Zona
+# from zonas.models import Zona
+from plantas.models import Planta
 from ParkingLotApp.models import TipoPlaza
 
 # Creo los modelos para las Plazas
@@ -13,7 +14,8 @@ class Plaza(models.Model):
     observaciones=models.TextField(max_length=300, null=True, blank=True)
     created=models.DateTimeField(auto_now_add=True)
     updated=models.DateTimeField(auto_now_add=True)
-    id_zona=models.ForeignKey(Zona, on_delete=models.CASCADE)
+    # id_zona=models.ForeignKey(Zona, on_delete=models.CASCADE)    
+    id_planta=models.ForeignKey(Planta, on_delete=models.CASCADE)    
     id_tipo_plaza=models.ForeignKey(TipoPlaza, on_delete=models.CASCADE)    
         
     class Meta:

@@ -668,11 +668,9 @@ stage.on('contextmenu', function (e) {
   menuNode.style.display = 'initial';
   var containerRect = stage.container().getBoundingClientRect();
   menuNode.style.top =
-    containerRect.top + stage.getPointerPosition().y + 'px';
-    // containerRect.top + stage.getPointerPosition().y + 4 + 'px';
+    containerRect.top + stage.getPointerPosition().y + 4 + 'px';
   menuNode.style.left =
-    containerRect.left + stage.getPointerPosition().x + 'px';
-    // containerRect.left + stage.getPointerPosition().x + 4 + 'px';
+    containerRect.left + stage.getPointerPosition().x + 4 + 'px';
 });
 
 function cerrarFormulario(){

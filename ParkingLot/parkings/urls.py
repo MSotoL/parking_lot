@@ -4,7 +4,7 @@ from parkings.views import ParkingsListado,ParkingsDetalle,ParkingsCrear,Parking
 
 # ****************************************************
 # ****************************************************
-from edificios.urls import EdificioListadoFiltrado
+# from edificios.urls import EdificioListadoFiltrado
 # ****************************************************
 # ****************************************************
 
@@ -28,5 +28,5 @@ urlpatterns = [
     # # La ruta 'eliminar' que usaremos para eliminar un Parking o registro de la Base de Datos 
     path('ElminarParking/<int:pk>', ParkingsEliminar.as_view(), name='ElminarParking'),   
     
-    path('edificios/ListarEdificioFiltrado/<int:pk>/', EdificioListadoFiltrado.as_view(template_name = "edificios/index_edificio.html"), name='ListarEdificioFiltrado'),    
+    # path('edificios/ListarEdificioFiltrado/<int:parking>/', EdificioListadoFiltrado.as_view(template_name = "edificios/index_edificio_filtrado.html"), name='ListarEdificioFiltrado'),    
 ]

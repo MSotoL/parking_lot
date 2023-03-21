@@ -249,7 +249,7 @@
 #menu {
     display: none;
     position: absolute;
-    width: 250px;
+    width: 150px;
     background-color: lightgoldenrodyellow;
     box-shadow: 0 0 5px darkblue;
     border-radius: 3px;
@@ -269,7 +269,7 @@
 
   #frmPlaza {
     visibility: hidden;
-    background-color: lightgreen;
+    background-color: rgb(152, 193, 246);
     color:darkblue;
     position: absolute;
     top: 300px;
@@ -279,4 +279,8 @@
     padding:20px;
     box-shadow: 0 0 5px darkblue;
     border-radius: 5px;
+  }
+
+  #plzDescrip{
+    width: 300px;
   }
