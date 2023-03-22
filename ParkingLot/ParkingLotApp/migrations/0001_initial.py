@@ -10,6 +10,17 @@ class Migration(migrations.Migration):
     dependencies = [
     ]
 
+    def insert_init_data(apps, schema_editor):
+        
+        tipoPlaza = apps.get_model('ParkingLotApp', 'TipoPlaza')
+        tipoPlaza.objects.create(descripcion='Grande', ancho=3.00, largo=5.00, discap=False)
+        tipoPlaza.objects.create(descripcion='Pequeña', ancho=2.20, largo=5.00, discap=False)
+        tipoPlaza.objects.create(descripcion='Discapacitados', ancho=3.00, largo=5.00, discap=True)
+           
+    def undo_insert_data(apps,schema_editor):
+        tipoPlaza = apps.get_model('ParkingLotApp', 'TipoPlaza')
+        tipoPlaza.objects.all().delete()
+    
     operations = [
         migrations.CreateModel(
             name='TipoPlaza',
@@ -27,4 +38,5 @@ class Migration(migrations.Migration):
                 'verbose_name_plural': 'tiposPlaza',
             },
         ),
+        migrations.RunPython(insert_init_data, reverse_code=undo_insert_data)
     ]
