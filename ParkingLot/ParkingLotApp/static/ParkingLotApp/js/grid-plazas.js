@@ -11,6 +11,15 @@ var plazaNum = 0
 var carreteraNum = 0
 var columnaNum=0
 
+var arrPlazas=[];
+var plaza = {
+  "id": 0,
+  "descripcion": "",
+  "observaciones": "",
+  "planta": 0,
+  "tipo" : 0
+}
+
 // ####################################################
 // #####  CREO EL ESCENARIO DONDE VOY A DIBUJAR  ######
 // ####################################################
@@ -595,7 +604,7 @@ function downloadURI(uri, name) {
   delete link;
 }
 
-function guardar(){
+function guardarImagen(){
 
   document.getElementById('btnGuardar').addEventListener(
     'click',
@@ -620,17 +629,72 @@ function cerrarAyuda(){
 }
 
 // ####################################################
+// #####        GUARDAR DATOS DE LA PLAZA       #######
+// ####################################################
+
+// var arrPlazas=[];
+
+function guardarInfoPlaza(){
+
+  // alert("Dentro de guardarInfoPlaza");
+
+  var objPlaza = {
+    id: 0,
+    descrip: "",
+    observ: "",
+    planta: 0,
+    tipo : 0
+  }
+  
+  objPlaza.id=document.getElementById('plzID').value;
+  objPlaza.descrip=document.getElementById('plzDescrip').value;
+  objPlaza.observ=document.getElementById('plzObserv').value;
+
+  var URLactual = window.location.href;
+  var plantaURL=URLactual.slice(URLactual.lastIndexOf('/')+1, URLactual.length);  
+  objPlaza.planta=Number(plantaURL);
+  
+  switch(document.getElementById('plzTipoPlaza').value){
+    case 'Grande':
+      objPlaza.tipo=1;
+      break;
+    case 'Pequeña':
+      objPlaza.tipo=2;
+      break;
+    case 'Discapacitados':
+      objPlaza.tipo=3;
+      break;
+  }
+
+  alert(arrPlazas.length);
+  arrPlazas.push(objPlaza);
+  alert(arrPlazas.length);
+
+//  ####################### VOY POR AQUÍ.... #############
+
+
+  document.getElementById('frmPlaza').style.visibility='hidden';
+
+
+
+
+}
+
+
+// ####################################################
 // #####  CREO EL MENÚ CONTEXTUAL DE CADA FORMA  ######
 // ####################################################
 let currentShape;
 var menuNode = document.getElementById('menu');
 document.getElementById('btnInformacion').addEventListener('click', () => {
   var strFig = currentShape.attrs.id;
-  var strFigura = "";
+  var strFigura = "";  
   if (strFig.slice(0, 2)=="co" || strFig.slice(0, 2)=="cr") {
     alert("Ha pulsado sobre una figura que no es una Plaza.\nNo se puede añadir información de esta figura (columnas o carreteras).");
   }
   else{
+    document.getElementById('plzID').value=strFig.slice(3, strFig.length);
+    document.getElementById('plzID').disabled=true;
     if (strFig.slice(0, 2)=="gr") {
       strFigura="Grande";
     }
@@ -640,6 +704,8 @@ document.getElementById('btnInformacion').addEventListener('click', () => {
     else {
       strFigura="Discapacitados";
     }
+    document.getElementById('plzDescrip').value="";
+    document.getElementById('plzObserv').value="";    
     document.getElementById('plzTipoPlaza').value=strFigura;
     document.getElementById('plzTipoPlaza').disabled=true;
     document.getElementById('frmPlaza').style.visibility='initial';

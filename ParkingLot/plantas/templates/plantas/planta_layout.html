@@ -30,7 +30,7 @@
             <td class="figColum" id="tdLayout"><button type="button" id="btnColumna" onclick="nColumna();">&nbsp;</button></td>
             <td class="figCarret" id="tdLayout"><button type="button" id="btnCarretera_H" onclick="nCarr_H();">&nbsp;</button></td>
             <td class="figCarret" id="tdLayout"><button type="button" id="btnCarretera_V" onclick="nCarr_V();">&nbsp;</button></td>
-            <td id="tdLayout"><button type="button" id="btnGuardar" onclick="guardar();"><img src="{% static 'ParkingLotApp/img/guardar.png' %}"></button>Guardar Imagen</td>
+            <td id="tdLayout"><button type="button" id="btnGuardar" onclick="guardarImagen();"><img src="{% static 'ParkingLotApp/img/guardar.png' %}"></button>Guardar Imagen</td>
             <td id="tdLayout"><button type="button" id="btnAyuda" onclick="ayuda();"><img src="{% static 'ParkingLotApp/img/ayuda.png' %}"></button>Ayuda</td>
             <td id="tdLayout"><button type="button" id="btnBorrar" onclick="borrar();"><img src="{% static 'ParkingLotApp/img/reset.png' %}"></button>Reiniciar</td>
         </tr>
@@ -59,14 +59,16 @@
 <div id="frmPlaza">
     <p class="text-center h2">Datos de la Plaza</p>
     <form>
+        <label for="plzID">ID:</label><br>
+        <input type="text" name="plzID" id="plzID"><br><br>        
         <label for="plzDescrip">Descripción:</label><br>
         <input type="text" name="plzDescrip" id="plzDescrip"><br><br>
         <label for="plzObserv">Observaciones:</label><br>
-        <textarea name="plzObserb" id="plzObserb" rows="10" cols="30"></textarea> <br><br>
+        <textarea name="plzObserv" id="plzObserv" rows="5" cols="30"></textarea> <br><br>
         <label for="plzTipo">Tipo de Plaza:</label><br>
         <input type="text" name="plzTipoPlaza" id="plzTipoPlaza"><br><br><br>
-        <input type="button" name="btnGuardarInfo" id="btnGuardarInfo" onclick="alert('Hello World!')" value="Guardar Información">&nbsp;
-        <input type="reset" name="btnReset" id="btnReset" value="Borrar campos">&nbsp;
+        <input type="button" name="btnGuardarInfo" id="btnGuardarInfo" onclick="guardarInfoPlaza();" value="Guardar Información">&nbsp;
+        <!-- <input type="reset" name="btnReset" id="btnReset" value="Borrar campos">&nbsp; -->
         <button type="button" id="btnCerrarAyuda" onclick="cerrarFormulario();"><img src="{% static 'ParkingLotApp/img/volver.png' %}"></button>
     </form>
 </div>
