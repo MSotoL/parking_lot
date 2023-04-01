@@ -5,6 +5,7 @@ var height = 500;
 var shadowOffset = 20;
 var tween = null;
 
+// Espacio en pixels para el "snap" del grid.
 var blockSnapSize = 15;
 
 var plazaNum = 0
@@ -12,13 +13,6 @@ var carreteraNum = 0
 var columnaNum=0
 
 var arrPlazas=[];
-var plaza = {
-  "id": 0,
-  "descripcion": "",
-  "observaciones": "",
-  "planta": 0,
-  "tipo" : 0
-}
 
 // ####################################################
 // #####  CREO EL ESCENARIO DONDE VOY A DIBUJAR  ######
@@ -154,10 +148,6 @@ function nuevaPlazaGr_H(x, y, layer, stage) {
     fill: 'green',
     stroke: '#ddd', // borde
     strokeWidth: 1,
-    // shadowColor: 'black',
-    // shadowBlur: 2,
-    // shadowOffset: {x : 1, y : 1},
-    // shadowOpacity: 0.4,
     draggable: true, 
     id:'gr_' + plazaNum //identificador de plaza
   });
@@ -189,10 +179,6 @@ function nuevaPlazaGr_H(x, y, layer, stage) {
     // Repintamos el área de Stage
     stage.batchDraw();
   });
-  // Evento al hacer "click" sobre la plaza
-  // plazaGr_H.on('click', function(e) {
-  //   alert(e.target.attrs.id);
-  // });
   // Añado la plaza a la capa
   layer.add(plazaGr_H);
   plazaNum+=1;
@@ -209,10 +195,6 @@ function nuevaPlazaGr_V(x, y, layer, stage) {
     fill: 'green',
     stroke: '#ddd',
     strokeWidth: 1,
-    // shadowColor: 'black',
-    // shadowBlur: 2,
-    // shadowOffset: {x : 1, y : 1},
-    // shadowOpacity: 0.4,
     draggable: true,
     id:'gr_' + plazaNum
   });
@@ -252,10 +234,6 @@ function nuevaPlazaPq_H(x, y, layer, stage) {
     fill: '#00E000',
     stroke: '#ddd',
     strokeWidth: 1,
-    // shadowColor: 'black',
-    // shadowBlur: 2,
-    // shadowOffset: {x : 1, y : 1},
-    // shadowOpacity: 0.4,
     draggable: true,
     id:'pq_' + plazaNum
   });
@@ -294,10 +272,6 @@ function nuevaPlazaPq_V(x, y, layer, stage) {
     fill: '#00E000',
     stroke: '#ddd',
     strokeWidth: 1,
-    // shadowColor: 'black',
-    // shadowBlur: 2,
-    // shadowOffset: {x : 1, y : 1},
-    // shadowOpacity: 0.4,
     draggable: true,
     id:'pq_' + plazaNum
   });
@@ -337,11 +311,6 @@ function nuevaPlazaDc_H(x, y, layer, stage) {
     fill: 'blue',
     stroke: '#ddd', // borde
     strokeWidth: 1,
-    // shadowColor: 'black',
-    // shadowBlur: 2,
-    // shadowOffset: {x : 1, y : 1},
-    // shadowOpacity: 0.4,
-    draggable: true, 
     id:'dc_' + plazaNum //identificador de plaza
   });
   plazaDc_H.on('dragstart', (e) => {
@@ -379,10 +348,6 @@ function nuevaPlazaDc_V(x, y, layer, stage) {
     fill: 'blue',
     stroke: '#ddd',
     strokeWidth: 1,
-    // shadowColor: 'black',
-    // shadowBlur: 2,
-    // shadowOffset: {x : 1, y : 1},
-    // shadowOpacity: 0.4,
     draggable: true,
     id:'dc_' + plazaNum
   });
@@ -631,24 +596,18 @@ function cerrarAyuda(){
 // ####################################################
 // #####        GUARDAR DATOS DE LA PLAZA       #######
 // ####################################################
-
-// var arrPlazas=[];
-
 function guardarInfoPlaza(){
-
-  // alert("Dentro de guardarInfoPlaza");
 
   var objPlaza = {
     id: 0,
-    descrip: "",
-    observ: "",
+    descripcion: "",
+    observaciones: "",
     planta: 0,
-    tipo : 0
+    tipo : 0,
   }
   
-  objPlaza.id=document.getElementById('plzID').value;
-  objPlaza.descrip=document.getElementById('plzDescrip').value;
-  objPlaza.observ=document.getElementById('plzObserv').value;
+  objPlaza.descripcion=document.getElementById('plzDescrip').value;
+  objPlaza.observaciones=document.getElementById('plzObserv').value;
 
   var URLactual = window.location.href;
   var plantaURL=URLactual.slice(URLactual.lastIndexOf('/')+1, URLactual.length);  
@@ -666,17 +625,32 @@ function guardarInfoPlaza(){
       break;
   }
 
-  alert(arrPlazas.length);
+  // ENVIAR LOS DATOS AL SERVIDOR MEDIANTE AJAX
+  // Creo un JSON con el objeto plaza
+  const plazaJSON = JSON.stringify(objPlaza);
+
+  // Envío el JSON al servidor con AJAX
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {
+    // Aquí controlo la respuesta del servidor
+    const respuesta=JSON.parse(this.responseText)
+    if (respuesta.resultado=="OK"){
+      alert("La plaza se ha insertado correctamente.");
+    }
+    else{
+      alert("Ha ocurrido un error al insertar la plaza.");
+    }
+  }
+
+  //Llamo a la vista guardar_plaza_BD
+  xhttp.open("POST", "/guardar_plaza_BD");
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send("plaza=" + plazaJSON + "&csrfmiddlewaretoken="+document.getElementsByName('csrfmiddlewaretoken')[0].value);
+
+  objPlaza.id=respuesta.id;
   arrPlazas.push(objPlaza);
-  alert(arrPlazas.length);
-
-//  ####################### VOY POR AQUÍ.... #############
-
 
   document.getElementById('frmPlaza').style.visibility='hidden';
-
-
-
 
 }
 

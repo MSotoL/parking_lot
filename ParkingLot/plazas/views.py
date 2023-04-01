@@ -28,9 +28,7 @@ class PlazaListado(ListView):
 class PlazaCrear(SuccessMessageMixin, CreateView): 
     model = Plaza # Llamamos a la clase 'Plaza' que se encuentra en nuestro archivo 'models.py'
     form = Plaza # Definimos nuestro formulario con el nombre de la clase o modelo 'Plaza'
-    # fields = ("descripcion", "observaciones", "id_zona", "id_tipo_plaza") # Le decimos a Django que muestre los campos de la tabla 'Plaza' de nuestra Base de Datos 
     fields = ("descripcion", "observaciones", "id_planta", "id_tipo_plaza") # Le decimos a Django que muestre los campos de la tabla 'Plaza' de nuestra Base de Datos 
-    
     success_message = 'Plaza Creada Correctamente' # Mostramos este Mensaje si el Parking se crea correctamente
  
     # Redireccionamos a la página principal 
@@ -39,7 +37,6 @@ class PlazaCrear(SuccessMessageMixin, CreateView):
     
 class PlazaDetalle(DetailView): 
     model = Plaza # Llamamos a la clase 'Plaza' que se encuentra en nuestro archivo 'models.py' 
-    
 
 class PlazaActualizar(SuccessMessageMixin, UpdateView): 
     model = Plaza # Llamamos a la clase 'Plaza' que se encuentra en nuestro archivo 'models.py' 
@@ -50,8 +47,6 @@ class PlazaActualizar(SuccessMessageMixin, UpdateView):
     # Redireccionamos a la página principal 
     def get_success_url(self):               
         return reverse('ListarPlaza') # Redireccionamos a la vista principal 
-
-
 
 class PlazaEliminar(SuccessMessageMixin, DeleteView): 
     model = Plaza
