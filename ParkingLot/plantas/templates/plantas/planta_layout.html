@@ -59,6 +59,7 @@
 <div id="frmPlaza">
     <p class="text-center h2">Datos de la Plaza</p>
     <form>
+        {% csrf_token %}
         <label for="plzID">ID:</label><br>
         <input type="text" name="plzID" id="plzID"><br><br>        
         <label for="plzDescrip">Descripción:</label><br>
@@ -68,7 +69,6 @@
         <label for="plzTipo">Tipo de Plaza:</label><br>
         <input type="text" name="plzTipoPlaza" id="plzTipoPlaza"><br><br><br>
         <input type="button" name="btnGuardarInfo" id="btnGuardarInfo" onclick="guardarInfoPlaza();" value="Guardar Información">&nbsp;
-        <!-- <input type="reset" name="btnReset" id="btnReset" value="Borrar campos">&nbsp; -->
         <button type="button" id="btnCerrarAyuda" onclick="cerrarFormulario();"><img src="{% static 'ParkingLotApp/img/volver.png' %}"></button>
     </form>
 </div>
