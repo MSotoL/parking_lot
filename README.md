@@ -34,7 +34,3 @@ Desarrollo de una aplicación web para la gestión integral de la información d
     ~~~
         <script src="https://unpkg.com/konva@8.4.2/konva.min.js"></script>
     ~~~
-
-## Licenciamiento
-
-![Licencia](https://github.com/MSotoL/parking_lot/blob/main/img/Licencia_CC.png)
