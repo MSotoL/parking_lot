@@ -18,10 +18,10 @@ Desarrollo de una aplicación web para la gestión integral de la información d
 
 - **Software necesario**
 
-    - Instalar Python v3
+    - Python v3
       - Download Python: <a href="https://www.python.org/downloads/">https://www.python.org/downloads/</a>
-    - Instalar Django:
-      - Para instalar Django utiliza el comando `python -m pip install Django`
+    - Django:
+      - `python -m pip install Django`
   
 - **Librerías y frameworks utilizados en el proyecto**
 
