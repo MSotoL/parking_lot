@@ -20,7 +20,7 @@ Desarrollo de una aplicación web para la gestión integral de la información d
 
     - Python v3
       - Download Python: <a href="https://www.python.org/downloads/">https://www.python.org/downloads/</a>
-    - Django:
+    - Django
       - `python -m pip install Django`
   
 - **Librerías y frameworks utilizados en el proyecto**
