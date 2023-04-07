@@ -6,4 +6,6 @@ Desarrollo de una aplicación web para la gestión integral de la información d
 
 ## Pantallas
 
-![Index.html](https://github.com/MSotoL/parking_lot/blob/main/img/index.png)
+![Index](https://github.com/MSotoL/parking_lot/blob/main/img/index.png) ![Parkings](https://github.com/MSotoL/parking_lot/blob/main/img/parkings.png)
+
+![Plantas](https://github.com/MSotoL/parking_lot/blob/main/img/plantas.png) ![Layout](https://github.com/MSotoL/parking_lot/blob/main/img/layout_design.png)
