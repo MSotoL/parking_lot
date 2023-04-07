@@ -34,7 +34,15 @@ Desarrollo de una aplicación web para la gestión integral de la información d
     ~~~
         <script src="https://unpkg.com/konva@8.4.2/konva.min.js"></script>
     ~~~
-    
+
+## Descripción
+
+El presente proyecto forma parte del **TFE** *\(**T**rabajo de **F**in de **E**studios\) del Grado en Ingeniería Informática realizado en **<a href="https://www.unir.net" target="blank">UNIR</a>**
+
+Se trata del desarrollo de una aplicación web que permite gestionar la información de un negocio de *Parking* y, además, permite diseñar el layout de estacionamiento de las diferentes plantas que componen el mismo.
+
+![Layout](https://github.com/MSotoL/parking_lot/blob/main/img/layout_design_2.png)
+
 ## Licenciamiento
 
 ![Licencia](https://github.com/MSotoL/parking_lot/blob/main/img/Licencia_CC.png)
