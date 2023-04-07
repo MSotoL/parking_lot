@@ -311,6 +311,7 @@ function nuevaPlazaDc_H(x, y, layer, stage) {
     fill: 'blue',
     stroke: '#ddd', // borde
     strokeWidth: 1,
+    draggable: true,
     id:'dc_' + plazaNum //identificador de plaza
   });
   plazaDc_H.on('dragstart', (e) => {
@@ -653,7 +654,6 @@ function guardarInfoPlaza(){
   document.getElementById('frmPlaza').style.visibility='hidden';
 
 }
-
 
 // ####################################################
 // #####  CREO EL MENÚ CONTEXTUAL DE CADA FORMA  ######
