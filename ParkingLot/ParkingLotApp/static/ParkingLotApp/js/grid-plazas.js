@@ -668,8 +668,7 @@ document.getElementById('btnInformacion').addEventListener('click', () => {
     alert("Ha pulsado sobre una figura que no es una Plaza.\nNo se puede añadir información de esta figura (columnas o carreteras).");
   }
   else{
-    document.getElementById('plzID').value=currentShape.attrs.id;
-    // document.getElementById('plzID').value=strFig.slice(3, strFig.length);
+    document.getElementById('plzID').value=strFig.slice(3, strFig.length);
     document.getElementById('plzID').disabled=true;
     if (strFig.slice(0, 2)=="gr") {
       strFigura="Grande";
@@ -680,7 +679,7 @@ document.getElementById('btnInformacion').addEventListener('click', () => {
     else {
       strFigura="Discapacitados";
     }
-    document.getElementById('plzID').style.visibility='hidden';
+    // document.getElementById('plzID').style.visibility='hidden';
     document.getElementById('plzDescrip').value="";
     document.getElementById('plzObserv').value="";    
     document.getElementById('plzTipoPlaza').value=strFigura;
