@@ -605,8 +605,10 @@ function guardarInfoPlaza(){
     observaciones: "",
     planta: 0,
     tipo: 0,
+    id_bd: 0,
   }
-  
+  var id_plaza=0;
+
   objPlaza.id_obj=document.getElementById('plzID').value;
   objPlaza.descripcion=document.getElementById('plzDescrip').value;
   objPlaza.observaciones=document.getElementById('plzObserv').value;
@@ -636,9 +638,12 @@ function guardarInfoPlaza(){
   xhttp.onload = function() {
     // Aquí controlo la respuesta del servidor
     const respuesta=JSON.parse(this.responseText)
+    console.log(this.responseText)
     if (respuesta.resultado=="OK"){
       // alert("La plaza se ha insertado correctamente.");
       alert(respuesta.mensaje);
+      objPlaza.id_bd=respuesta.id;
+      arrPlazas.push(objPlaza);
     }
     else{
       alert("Ha ocurrido un error al insertar la plaza.");
@@ -650,9 +655,6 @@ function guardarInfoPlaza(){
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.send("plaza=" + plazaJSON + "&csrfmiddlewaretoken="+document.getElementsByName('csrfmiddlewaretoken')[0].value);
 
-  // objPlaza.id_bd=respuesta.id;
-
-  arrPlazas.push(objPlaza);
   document.getElementById('frmPlaza').style.visibility='hidden';
 }
 
