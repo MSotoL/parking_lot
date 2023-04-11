@@ -600,13 +600,14 @@ function cerrarAyuda(){
 function guardarInfoPlaza(){
 
   var objPlaza = {
-    id: 0,
+    id_obj: "",
     descripcion: "",
     observaciones: "",
     planta: 0,
-    tipo : 0,
+    tipo: 0,
   }
   
+  objPlaza.id_obj=document.getElementById('plzID').value;
   objPlaza.descripcion=document.getElementById('plzDescrip').value;
   objPlaza.observaciones=document.getElementById('plzObserv').value;
 
@@ -636,7 +637,8 @@ function guardarInfoPlaza(){
     // Aquí controlo la respuesta del servidor
     const respuesta=JSON.parse(this.responseText)
     if (respuesta.resultado=="OK"){
-      alert("La plaza se ha insertado correctamente.");
+      // alert("La plaza se ha insertado correctamente.");
+      alert(respuesta.mensaje);
     }
     else{
       alert("Ha ocurrido un error al insertar la plaza.");
@@ -648,11 +650,10 @@ function guardarInfoPlaza(){
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.send("plaza=" + plazaJSON + "&csrfmiddlewaretoken="+document.getElementsByName('csrfmiddlewaretoken')[0].value);
 
-  objPlaza.id=respuesta.id;
+  // objPlaza.id_bd=respuesta.id;
+
   arrPlazas.push(objPlaza);
-
   document.getElementById('frmPlaza').style.visibility='hidden';
-
 }
 
 // ####################################################
@@ -667,7 +668,8 @@ document.getElementById('btnInformacion').addEventListener('click', () => {
     alert("Ha pulsado sobre una figura que no es una Plaza.\nNo se puede añadir información de esta figura (columnas o carreteras).");
   }
   else{
-    document.getElementById('plzID').value=strFig.slice(3, strFig.length);
+    document.getElementById('plzID').value=currentShape.attrs.id;
+    // document.getElementById('plzID').value=strFig.slice(3, strFig.length);
     document.getElementById('plzID').disabled=true;
     if (strFig.slice(0, 2)=="gr") {
       strFigura="Grande";
@@ -678,6 +680,7 @@ document.getElementById('btnInformacion').addEventListener('click', () => {
     else {
       strFigura="Discapacitados";
     }
+    document.getElementById('plzID').style.visibility='hidden';
     document.getElementById('plzDescrip').value="";
     document.getElementById('plzObserv').value="";    
     document.getElementById('plzTipoPlaza').value=strFigura;

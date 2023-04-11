@@ -29,7 +29,7 @@ def guardarPlazaBD(request):
     plzBD.save()
     
     
-    data={'resultado':'OK', 'mensaje':'Dato insertado', 'id': plzBD.id}
+    data={'resultado':'OK', 'mensaje':'Plaza insertada correctamente.', 'id': plzBD.id}
     
     return JsonResponse(data, safe=False)
 
